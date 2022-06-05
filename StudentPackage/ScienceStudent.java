@@ -1,9 +1,20 @@
 package StudentPackage;
 
 public class ScienceStudent extends Student {
+	
 	int phisicsMarks;
 	int chemistryMarks;
 	int mathsMarks;
+
+	
+	
+	public ScienceStudent(String name, String address, int phisicsMarks, int chemistryMarks, int mathsMarks) {
+		super(name, address);
+		this.phisicsMarks = phisicsMarks;
+		this.chemistryMarks = chemistryMarks;
+		this.mathsMarks = mathsMarks;
+	}
+
 
 	public int getPhisicsMarks() {
 		return phisicsMarks;
@@ -32,10 +43,7 @@ public class ScienceStudent extends Student {
 	@Override
 	double getPercentage() {
 		int obtainedMarks=getMathsMarks()+getChemistryMarks()+getPhisicsMarks();
-		System.out.println("Obtained marks: "+obtainedMarks);
-		System.out.println("Math marks: "+getMathsMarks());
-		System.out.println("Chemistory marks: "+getChemistryMarks());
-		System.out.println("Physics"+getPhisicsMarks());
+	
 		double per=(obtainedMarks*100)/300;
 		return per;
 	}
